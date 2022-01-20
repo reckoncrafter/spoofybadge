@@ -25,3 +25,12 @@ Run the script from your command line
 ```
 python3 main.py
 ```
+
+## Changing Parameters
+I plan on implementing command line options, but if you want to change the font, add the absolute path to
+```
+draw.font = ""
+```
+at line `57`
+
+line 55 onwards has all the ImageMagick commands, so feel free to adjust those.

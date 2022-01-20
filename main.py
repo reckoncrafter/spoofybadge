@@ -55,8 +55,12 @@ aart.resize(100,100)
 with Drawing() as draw:
     with Image(width=400, height=100, background='white') as img:
         draw.font = "FreeMonoBold.otf"
+        #            ^ change path to font here
         draw.font_size = 18
         draw.text(110, 25, title)
+        #          /\   /\
+        #          x    y
+        #          \/   \/
         draw.text(110, 50, artist)
         draw(img)
 

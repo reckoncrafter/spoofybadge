@@ -29,8 +29,9 @@ js = requests.get(url, headers=headers)
 try:
 	js = js.json()
 except:
-	print(js)
-	exit()
+    print(js)
+    print("Make sure a song is playing!")
+    exit()
 
 ## Parsing JSON
 
@@ -42,14 +43,21 @@ try:
     print(title)
     print(artist)
     print(album_art)
-except Exception as e:
-    print(e)
+except:
+    try:
+        error = js["error"]["status"]
+        if(error == 401):
+            print("Your OAUTH token has expired!")
+            print("https://developer.spotify.com/console/get-users-currently-playing-track/")
+    except:
+        print(js)
+
     exit()
 
 if(len(title) > 25):
     title = title[0:23] + "..."
 
-if (len(artist) > 25):
+if(len(artist) > 25):
     artist = artist[0:23] + "..."
 
 ## Pulling image

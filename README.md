@@ -33,4 +33,4 @@ draw.font = ""
 ```
 at line `57`
 
-line 55 onwards has all the ImageMagick commands, so feel free to adjust those.
+line `55` onwards has all the ImageMagick commands, so feel free to adjust those.

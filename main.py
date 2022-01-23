@@ -25,13 +25,25 @@ if not OAUTH_TOKEN:
 url = "https://api.spotify.com/v1/me/player/currently-playing"
 headers = {'Accept':'application/json', 'Content-Type':'application/json', "Authorization":"Bearer " + OAUTH_TOKEN}
 js = requests.get(url, headers=headers)
-js = js.json()
+try:
+	js = js.json()
+except:
+	print(js)
+	exit()
 
 ## Parsing JSON
 
-artist = js["item"]["album"]["artists"][0]["name"]
-album_art = js["item"]["album"]["images"][0]["url"]
-title = js["item"]["name"]
+try:
+    artist = js["item"]["album"]["artists"][0]["name"]
+    album_art = js["item"]["album"]["images"][0]["url"]
+    title = js["item"]["name"]
+
+    print(title)
+    print(album)
+    print(album_art)
+except:
+    print(js)
+    exit()
 
 if(len(title) > 25):
     title = title[0:23] + "..."

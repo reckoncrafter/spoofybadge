@@ -40,10 +40,10 @@ try:
     title = js["item"]["name"]
 
     print(title)
-    print(album)
+    print(artist)
     print(album_art)
-except:
-    print(js)
+except Exception as e:
+    print(e)
     exit()
 
 if(len(title) > 25):

@@ -15,6 +15,7 @@ except:
     exit()
 
 OAUTH_TOKEN = OAUTH_TOKEN.read()
+OAUTH_TOKEN = OAUTH_TOKEN.strip()
 
 if not OAUTH_TOKEN:
     print("No OAuth token found! Please retrive one from")
